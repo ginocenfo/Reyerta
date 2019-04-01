@@ -1,0 +1,56 @@
+<div>
+    <h2 id="page-heading">
+        <span>Profile Points</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-profile-points" [routerLink]="['/profile-points/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Profile Points
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="profilePoints">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Points</span></th>
+            <th><span>Perfil</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let profilePoints of profilePoints ;trackBy: trackId">
+                <td><a [routerLink]="['/profile-points', profilePoints.id, 'view' ]">{{profilePoints.id}}</a></td>
+                <td>{{profilePoints.points}}</td>
+                <td>{{profilePoints.perfil}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/profile-points', profilePoints.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/profile-points', profilePoints.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'profile-points', { outlets: { popup: profilePoints.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

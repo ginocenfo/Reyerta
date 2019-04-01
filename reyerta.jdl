@@ -1,0 +1,323 @@
+entity Dado{
+	size Integer
+    cant Integer
+}
+
+entity Aic{
+	prob Integer
+    mult Integer
+}
+
+enum DamageType{
+	CORTANTE,
+    PERFORANTE,
+    IMPACTANTE,
+    ENERGIA,
+    AGUA,
+    AIRE,
+    FUEGO,
+    TIERRA,
+    LUZ,
+    SOMBRA,
+    METAL,
+    ROCA,
+    TIERRA,
+    ELECTRICIDAD,
+    HIELO
+}
+
+enum Special{
+	NOLETAL,
+    LETAL,
+    ARROJADIZA,
+    DERRIBAR,
+    FRAGIL,
+    MADERA,
+    DOBLE,
+    MONJE,
+    APUNTALAR,
+    ALCANCE,
+    DESARMAR,
+    NINGUNO
+
+}
+
+entity Arma {
+	type String
+    name String
+    prize Double
+    level Integer
+    isMasterpiece Boolean
+    eliteLevel Integer
+    damageType DamageType
+    special Special
+    incrustacion IncrustacionesArma
+}
+
+enum IncrustacionesArmadura{
+	ACORAZADA_MENOR,
+    ATRAYENTE_MENOR,
+    CURATIVA_BASICA,
+    ESCAPISTA,
+    FLEXIBLE,
+    OPACA,
+    PROTECTORA,
+    SILENCIOSA,
+    REFORZADA_MENOR,
+    ACORAZADA,
+    ANARQUICA,
+    ATRAYENTE,
+    AXIOMATICA,
+    CAMBIANTE,
+    CURATIVA_CRITICA,
+    PROFANA,
+    RESISTENTE_MENOR,
+    SAGRADA,
+    VALIENTE,
+    ACORAZADA_MAYOR,
+    ATRAYENTE_MAYOR,
+    CURATIVA_SEVERA,
+    ETEREA,
+    INDESTRUCTIBLE,
+    REFORZADA,
+    RESISTENTE,
+    DESAFIANTE,
+    RESISTENTE_MAYOR,
+    REFORZADA_MAYOR,
+    REDENTORA,
+	ACORAZADO_MENOR,
+    ALIENTODRAGON,
+    BATIENTE,
+    CAUSTICO_MENOR,
+    CECADOR,
+    CONCUSION,
+    PROTECTOR,
+    PUNZANTE,
+    RESISTENTE_MENOR,
+    ACORAZADO,
+    CAUSTICO,
+    REFLEJANTE_MENOR,
+    RESISTENTE,
+    VALIENTE,
+    ACORAZADO_MAYOR,
+    CAUTICO_MAYOR,
+    FLOTANTE,
+    REFLEJANTE,
+    RESISTENTE_MAYOR,
+    INDESTRUCTIBLE,
+    REFLEJANTE_MAYOR,
+    REDENTORA,
+    NONE
+}
+
+enum IncrustacionesArma{
+	AMENAZANTE,
+    ANULANTE_MENOR,
+    ARROJADIZA,
+    ATINANTE,
+    BALANCEADA,
+    BRILALNTE,
+    CASTIGADORA,
+    COMPASIVA,
+    CORROSIVA,
+    DEFENSORA,
+    DISTANTE,
+    ENCANTADA_MENOR,
+    FILOSA,
+    PROTECTORA,
+    RETORNANTE,
+    VICTORIOSA,
+    DINAMO,
+    ANARQUICA,
+    ANULANTE,
+    AXIOMATICA,
+    CONTUNDENTE,
+    ENCANTADA,
+    LACERANTE,
+    PROFANA,
+    SAGRADA,
+    VAMPIRICA,
+    RADIANTE,
+    DINAMO_OPTIMIZADO,
+    ANIMADA,
+    ANULANTE_MAYOR,
+    BUSCADORA,
+    ETEREA,
+    ENCANTADA_MAYOR,
+    INVISIBLE,
+    INVOCABLE,
+    VELOZ,
+    RADIANTE_EXPLOSIVA,
+    EXORCISTA,
+    INDESTRUCTIBLE,
+    EJECUTORA,
+    SOLARIANA,
+    NONE
+}
+
+entity Armadura{
+	type String,
+    name String,
+    evasionBonus Integer,
+    maxDex Integer,
+    level Integer,
+    uc Integer,
+    ppa Integer,
+    castFailChance Integer,
+    price Double
+    incrustacionArmadura IncrustacionesArmadura
+}
+
+enum Elementality{
+	LUZ,
+    FUEGO,
+    TIERRA,
+    METAL,
+    ROCA,
+    SOMBRA,
+    AGUA,
+    AIRE,
+    HIELO,
+    ELECTRICIDAD
+}
+
+enum Races{
+	ALARDYS,
+    ALFIR_ELAK,
+    ALFIR_GYLENE,
+    ALFIR_MUANEN,
+    DHAMPIR,
+    DOKKALFAR,
+    GNOMO,
+    IYIWAK_ICHICK,
+    IYIWAK_NAMU,
+    IYIWAK_URRI,
+    HUMANO,
+    MITALFIR,
+    VARKOLAK
+}
+
+enum CharacterClase{
+	ASESINO,
+    BARBARO,
+    BARDO,
+    CABALLERO_OSCURO,
+    CAZADOR,
+    CLERIGO,
+    ESPADACHIN,
+    LADRON,
+    MAGO,
+    MONJE,
+    NINJA,
+    PALADIN,
+    PELEADOR,
+    PISTOLERO,
+    SAMURAI,
+    LANCERO,
+    TECNOLOGO,
+    ALQUIMISTA
+
+}
+
+enum Profile{
+	CARISMA,
+    CONSTITUCION,
+    DESTREZA,
+    FUERZA,
+    INTELIGENCIA,
+    SABIDURIA
+}
+
+enum Alignment{
+	CAOTICO_BUENO,
+    CAOTICO_NEUTRAL,
+    CAOTICO_MALO,
+    NEUTRAL_BUENO,
+    NEUTRAL_NEUTRAL,
+    NEUTRAL_MALO,
+    LEGAL_BUENO,
+    LEGAL_NEUTRAL,
+    LEGAL_MALO
+
+}
+
+enum Dexterity{
+	DIESTRO,
+    ZURDO
+}
+
+enum Sizes{
+	GIGANTIC,
+    LARGE,
+    MEDIUM,
+    SMALL,
+    TINY
+}
+
+entity Personaje{
+	ownerName String,
+    characterName String,
+    alignment Alignment,
+    religion String,
+    gender String,
+    realAge Integer,
+    apparentAge Integer,
+    dexterity Dexterity,
+    originName String,
+    size Sizes,
+    height Double,
+    weight Double,
+    eyeColor String,
+    hairColor String,
+    tezColor String,
+    maxHitPoints Integer,
+    currentHitPoints Integer,
+    race Races,
+    characterClass CharacterClase
+    
+}
+
+entity ProfilePoints{
+	points Integer
+    perfil Profile
+}
+
+entity Skill{
+	name String,
+    relatedProfile Profile,
+    grade Integer,
+    magicObject Integer,
+    other Integer,
+    penalizer Integer,
+    isTrained Boolean,
+    isExpertise Boolean,
+    isPenalized Boolean,
+    isPenalizedByLanguage Boolean,
+    girsoPieces Integer,
+    platinumPieces Integer,
+    goldPieces Integer,
+    silverPieces Integer,
+    copperPieces Integer,
+}
+
+relationship OneToOne {
+	Arma{dado} to Dado,
+    Arma{crit} to Aic,
+    Armadura{damageByShield} to Dado
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    Personaje{armas} to Arma,
+    Personaje{armadura} to Armadura
+}
+
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

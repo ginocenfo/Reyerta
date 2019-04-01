@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span>Armaduras</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-armadura" [routerLink]="['/armadura/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Armadura
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="armaduras">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Type</span></th>
+            <th><span>Name</span></th>
+            <th><span>Evasion Bonus</span></th>
+            <th><span>Max Dex</span></th>
+            <th><span>Level</span></th>
+            <th><span>Uc</span></th>
+            <th><span>Ppa</span></th>
+            <th><span>Cast Fail Chance</span></th>
+            <th><span>Price</span></th>
+            <th><span>Incrustacion Armadura</span></th>
+            <th><span>Damage By Shield</span></th>
+            <th><span>Personaje</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let armadura of armaduras ;trackBy: trackId">
+                <td><a [routerLink]="['/armadura', armadura.id, 'view' ]">{{armadura.id}}</a></td>
+                <td>{{armadura.type}}</td>
+                <td>{{armadura.name}}</td>
+                <td>{{armadura.evasionBonus}}</td>
+                <td>{{armadura.maxDex}}</td>
+                <td>{{armadura.level}}</td>
+                <td>{{armadura.uc}}</td>
+                <td>{{armadura.ppa}}</td>
+                <td>{{armadura.castFailChance}}</td>
+                <td>{{armadura.price}}</td>
+                <td>{{armadura.incrustacionArmadura}}</td>
+                <td>
+                    <div *ngIf="armadura.damageByShield">
+                        <a [routerLink]="['../dado', armadura.damageByShield?.id, 'view' ]" >{{armadura.damageByShield?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="armadura.personaje">
+                        <a [routerLink]="['../personaje', armadura.personaje?.id, 'view' ]" >{{armadura.personaje?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/armadura', armadura.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/armadura', armadura.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'armadura', { outlets: { popup: armadura.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

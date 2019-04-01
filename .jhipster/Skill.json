@@ -1,0 +1,76 @@
+{
+    "name": "Skill",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "relatedProfile",
+            "fieldType": "Profile",
+            "fieldValues": "CARISMA,CONSTITUCION,DESTREZA,FUERZA,INTELIGENCIA,SABIDURIA"
+        },
+        {
+            "fieldName": "grade",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "magicObject",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "other",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "penalizer",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isTrained",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isExpertise",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isPenalized",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isPenalizedByLanguage",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "girsoPieces",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "platinumPieces",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "goldPieces",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "silverPieces",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "copperPieces",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190224220807",
+    "entityTableName": "skill",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="skill">
+            <h2><span>Skill</span> {{skill.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{skill.name}}</span>
+                </dd>
+                <dt><span>Related Profile</span></dt>
+                <dd>
+                    <span>{{skill.relatedProfile}}</span>
+                </dd>
+                <dt><span>Grade</span></dt>
+                <dd>
+                    <span>{{skill.grade}}</span>
+                </dd>
+                <dt><span>Magic Object</span></dt>
+                <dd>
+                    <span>{{skill.magicObject}}</span>
+                </dd>
+                <dt><span>Other</span></dt>
+                <dd>
+                    <span>{{skill.other}}</span>
+                </dd>
+                <dt><span>Penalizer</span></dt>
+                <dd>
+                    <span>{{skill.penalizer}}</span>
+                </dd>
+                <dt><span>Is Trained</span></dt>
+                <dd>
+                    <span>{{skill.isTrained}}</span>
+                </dd>
+                <dt><span>Is Expertise</span></dt>
+                <dd>
+                    <span>{{skill.isExpertise}}</span>
+                </dd>
+                <dt><span>Is Penalized</span></dt>
+                <dd>
+                    <span>{{skill.isPenalized}}</span>
+                </dd>
+                <dt><span>Is Penalized By Language</span></dt>
+                <dd>
+                    <span>{{skill.isPenalizedByLanguage}}</span>
+                </dd>
+                <dt><span>Girso Pieces</span></dt>
+                <dd>
+                    <span>{{skill.girsoPieces}}</span>
+                </dd>
+                <dt><span>Platinum Pieces</span></dt>
+                <dd>
+                    <span>{{skill.platinumPieces}}</span>
+                </dd>
+                <dt><span>Gold Pieces</span></dt>
+                <dd>
+                    <span>{{skill.goldPieces}}</span>
+                </dd>
+                <dt><span>Silver Pieces</span></dt>
+                <dd>
+                    <span>{{skill.silverPieces}}</span>
+                </dd>
+                <dt><span>Copper Pieces</span></dt>
+                <dd>
+                    <span>{{skill.copperPieces}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/skill', skill.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

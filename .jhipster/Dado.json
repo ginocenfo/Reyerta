@@ -1,0 +1,23 @@
+{
+    "name": "Dado",
+    "fields": [
+        {
+            "fieldName": "size",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cant",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190224220801",
+    "entityTableName": "dado",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

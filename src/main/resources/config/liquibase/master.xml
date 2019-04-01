@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220801_added_entity_Dado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220802_added_entity_Aic.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220803_added_entity_Arma.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220804_added_entity_Armadura.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220805_added_entity_Personaje.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220806_added_entity_ProfilePoints.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220807_added_entity_Skill.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190224220803_added_entity_constraints_Arma.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190224220804_added_entity_constraints_Armadura.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

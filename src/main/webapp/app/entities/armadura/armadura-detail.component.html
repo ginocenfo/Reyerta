@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="armadura">
+            <h2><span>Armadura</span> {{armadura.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Type</span></dt>
+                <dd>
+                    <span>{{armadura.type}}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{armadura.name}}</span>
+                </dd>
+                <dt><span>Evasion Bonus</span></dt>
+                <dd>
+                    <span>{{armadura.evasionBonus}}</span>
+                </dd>
+                <dt><span>Max Dex</span></dt>
+                <dd>
+                    <span>{{armadura.maxDex}}</span>
+                </dd>
+                <dt><span>Level</span></dt>
+                <dd>
+                    <span>{{armadura.level}}</span>
+                </dd>
+                <dt><span>Uc</span></dt>
+                <dd>
+                    <span>{{armadura.uc}}</span>
+                </dd>
+                <dt><span>Ppa</span></dt>
+                <dd>
+                    <span>{{armadura.ppa}}</span>
+                </dd>
+                <dt><span>Cast Fail Chance</span></dt>
+                <dd>
+                    <span>{{armadura.castFailChance}}</span>
+                </dd>
+                <dt><span>Price</span></dt>
+                <dd>
+                    <span>{{armadura.price}}</span>
+                </dd>
+                <dt><span>Incrustacion Armadura</span></dt>
+                <dd>
+                    <span>{{armadura.incrustacionArmadura}}</span>
+                </dd>
+                <dt><span>Damage By Shield</span></dt>
+                <dd>
+                    <div *ngIf="armadura.damageByShield">
+                        <a [routerLink]="['/dado', armadura.damageByShield?.id, 'view']">{{armadura.damageByShield?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Personaje</span></dt>
+                <dd>
+                    <div *ngIf="armadura.personaje">
+                        <a [routerLink]="['/personaje', armadura.personaje?.id, 'view']">{{armadura.personaje?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/armadura', armadura.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

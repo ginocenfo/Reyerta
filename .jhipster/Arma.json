@@ -1,0 +1,77 @@
+{
+    "name": "Arma",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prize",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isMasterpiece",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "eliteLevel",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "damageType",
+            "fieldType": "DamageType",
+            "fieldValues": "CORTANTE,PERFORANTE,IMPACTANTE,ENERGIA,AGUA,AIRE,FUEGO,TIERRA,LUZ,SOMBRA,METAL,ROCA,ELECTRICIDAD,HIELO"
+        },
+        {
+            "fieldName": "special",
+            "fieldType": "Special",
+            "fieldValues": "NOLETAL,LETAL,ARROJADIZA,DERRIBAR,FRAGIL,MADERA,DOBLE,MONJE,APUNTALAR,ALCANCE,DESARMAR,NINGUNO"
+        },
+        {
+            "fieldName": "incrustacion",
+            "fieldType": "IncrustacionesArma",
+            "fieldValues": "AMENAZANTE,ANULANTE_MENOR,ARROJADIZA,ATINANTE,BALANCEADA,BRILALNTE,CASTIGADORA,COMPASIVA,CORROSIVA,DEFENSORA,DISTANTE,ENCANTADA_MENOR,FILOSA,PROTECTORA,RETORNANTE,VICTORIOSA,DINAMO,ANARQUICA,ANULANTE,AXIOMATICA,CONTUNDENTE,ENCANTADA,LACERANTE,PROFANA,SAGRADA,VAMPIRICA,RADIANTE,DINAMO_OPTIMIZADO,ANIMADA,ANULANTE_MAYOR,BUSCADORA,ETEREA,ENCANTADA_MAYOR,INVISIBLE,INVOCABLE,VELOZ,RADIANTE_EXPLOSIVA,EXORCISTA,INDESTRUCTIBLE,EJECUTORA,SOLARIANA,NONE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "dado",
+            "otherEntityName": "dado",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "arma"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "crit",
+            "otherEntityName": "aic",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "arma"
+        },
+        {
+            "relationshipName": "personaje",
+            "otherEntityName": "personaje",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190224220803",
+    "entityTableName": "arma",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

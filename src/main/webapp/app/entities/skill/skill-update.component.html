@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-skill-heading">Create or edit a Skill</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!skill.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="skill.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="skill.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_relatedProfile">Related Profile</label>
+                    <select class="form-control" name="relatedProfile" [(ngModel)]="skill.relatedProfile" id="field_relatedProfile" >
+                        <option value="CARISMA">CARISMA</option>
+                        <option value="CONSTITUCION">CONSTITUCION</option>
+                        <option value="DESTREZA">DESTREZA</option>
+                        <option value="FUERZA">FUERZA</option>
+                        <option value="INTELIGENCIA">INTELIGENCIA</option>
+                        <option value="SABIDURIA">SABIDURIA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_grade">Grade</label>
+                    <input type="number" class="form-control" name="grade" id="field_grade"
+                        [(ngModel)]="skill.grade" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_magicObject">Magic Object</label>
+                    <input type="number" class="form-control" name="magicObject" id="field_magicObject"
+                        [(ngModel)]="skill.magicObject" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_other">Other</label>
+                    <input type="number" class="form-control" name="other" id="field_other"
+                        [(ngModel)]="skill.other" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_penalizer">Penalizer</label>
+                    <input type="number" class="form-control" name="penalizer" id="field_penalizer"
+                        [(ngModel)]="skill.penalizer" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_isTrained">Is Trained</label>
+                    <input type="checkbox" class="form-control" name="isTrained" id="field_isTrained"
+                        [(ngModel)]="skill.isTrained" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_isExpertise">Is Expertise</label>
+                    <input type="checkbox" class="form-control" name="isExpertise" id="field_isExpertise"
+                        [(ngModel)]="skill.isExpertise" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_isPenalized">Is Penalized</label>
+                    <input type="checkbox" class="form-control" name="isPenalized" id="field_isPenalized"
+                        [(ngModel)]="skill.isPenalized" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_isPenalizedByLanguage">Is Penalized By Language</label>
+                    <input type="checkbox" class="form-control" name="isPenalizedByLanguage" id="field_isPenalizedByLanguage"
+                        [(ngModel)]="skill.isPenalizedByLanguage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_girsoPieces">Girso Pieces</label>
+                    <input type="number" class="form-control" name="girsoPieces" id="field_girsoPieces"
+                        [(ngModel)]="skill.girsoPieces" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_platinumPieces">Platinum Pieces</label>
+                    <input type="number" class="form-control" name="platinumPieces" id="field_platinumPieces"
+                        [(ngModel)]="skill.platinumPieces" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldPieces">Gold Pieces</label>
+                    <input type="number" class="form-control" name="goldPieces" id="field_goldPieces"
+                        [(ngModel)]="skill.goldPieces" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_silverPieces">Silver Pieces</label>
+                    <input type="number" class="form-control" name="silverPieces" id="field_silverPieces"
+                        [(ngModel)]="skill.silverPieces" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_copperPieces">Copper Pieces</label>
+                    <input type="number" class="form-control" name="copperPieces" id="field_copperPieces"
+                        [(ngModel)]="skill.copperPieces" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

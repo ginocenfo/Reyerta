@@ -1,0 +1,71 @@
+{
+    "name": "Armadura",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "evasionBonus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxDex",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "uc",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ppa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "castFailChance",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "incrustacionArmadura",
+            "fieldType": "IncrustacionesArmadura",
+            "fieldValues": "ACORAZADA_MENOR,ATRAYENTE_MENOR,CURATIVA_BASICA,ESCAPISTA,FLEXIBLE,OPACA,PROTECTORA,SILENCIOSA,REFORZADA_MENOR,ACORAZADA,ANARQUICA,ATRAYENTE,AXIOMATICA,CAMBIANTE,CURATIVA_CRITICA,PROFANA,RESISTENTE_MENOR,SAGRADA,VALIENTE,ACORAZADA_MAYOR,ATRAYENTE_MAYOR,CURATIVA_SEVERA,ETEREA,INDESTRUCTIBLE,REFORZADA,RESISTENTE,DESAFIANTE,RESISTENTE_MAYOR,REFORZADA_MAYOR,REDENTORA,ACORAZADO_MENOR,ALIENTODRAGON,BATIENTE,CAUSTICO_MENOR,CECADOR,CONCUSION,PROTECTOR,PUNZANTE,ACORAZADO,CAUSTICO,REFLEJANTE_MENOR,ACORAZADO_MAYOR,CAUTICO_MAYOR,FLOTANTE,REFLEJANTE,REFLEJANTE_MAYOR,NONE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "damageByShield",
+            "otherEntityName": "dado",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "armadura"
+        },
+        {
+            "relationshipName": "personaje",
+            "otherEntityName": "personaje",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190224220804",
+    "entityTableName": "armadura",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

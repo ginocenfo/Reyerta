@@ -1,0 +1,24 @@
+{
+    "name": "ProfilePoints",
+    "fields": [
+        {
+            "fieldName": "points",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "perfil",
+            "fieldType": "Profile",
+            "fieldValues": "CARISMA,CONSTITUCION,DESTREZA,FUERZA,INTELIGENCIA,SABIDURIA"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190224220806",
+    "entityTableName": "profile_points",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

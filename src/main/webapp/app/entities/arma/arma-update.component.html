@@ -1,0 +1,158 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-arma-heading">Create or edit a Arma</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!arma.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="arma.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                        [(ngModel)]="arma.type" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="arma.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prize">Prize</label>
+                    <input type="number" class="form-control" name="prize" id="field_prize"
+                        [(ngModel)]="arma.prize" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_level">Level</label>
+                    <input type="number" class="form-control" name="level" id="field_level"
+                        [(ngModel)]="arma.level" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_isMasterpiece">Is Masterpiece</label>
+                    <input type="checkbox" class="form-control" name="isMasterpiece" id="field_isMasterpiece"
+                        [(ngModel)]="arma.isMasterpiece" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eliteLevel">Elite Level</label>
+                    <input type="number" class="form-control" name="eliteLevel" id="field_eliteLevel"
+                        [(ngModel)]="arma.eliteLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_damageType">Damage Type</label>
+                    <select class="form-control" name="damageType" [(ngModel)]="arma.damageType" id="field_damageType" >
+                        <option value="CORTANTE">CORTANTE</option>
+                        <option value="PERFORANTE">PERFORANTE</option>
+                        <option value="IMPACTANTE">IMPACTANTE</option>
+                        <option value="ENERGIA">ENERGIA</option>
+                        <option value="AGUA">AGUA</option>
+                        <option value="AIRE">AIRE</option>
+                        <option value="FUEGO">FUEGO</option>
+                        <option value="TIERRA">TIERRA</option>
+                        <option value="LUZ">LUZ</option>
+                        <option value="SOMBRA">SOMBRA</option>
+                        <option value="METAL">METAL</option>
+                        <option value="ROCA">ROCA</option>
+                        <option value="ELECTRICIDAD">ELECTRICIDAD</option>
+                        <option value="HIELO">HIELO</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_special">Special</label>
+                    <select class="form-control" name="special" [(ngModel)]="arma.special" id="field_special" >
+                        <option value="NOLETAL">NOLETAL</option>
+                        <option value="LETAL">LETAL</option>
+                        <option value="ARROJADIZA">ARROJADIZA</option>
+                        <option value="DERRIBAR">DERRIBAR</option>
+                        <option value="FRAGIL">FRAGIL</option>
+                        <option value="MADERA">MADERA</option>
+                        <option value="DOBLE">DOBLE</option>
+                        <option value="MONJE">MONJE</option>
+                        <option value="APUNTALAR">APUNTALAR</option>
+                        <option value="ALCANCE">ALCANCE</option>
+                        <option value="DESARMAR">DESARMAR</option>
+                        <option value="NINGUNO">NINGUNO</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_incrustacion">Incrustacion</label>
+                    <select class="form-control" name="incrustacion" [(ngModel)]="arma.incrustacion" id="field_incrustacion" >
+                        <option value="AMENAZANTE">AMENAZANTE</option>
+                        <option value="ANULANTE_MENOR">ANULANTE_MENOR</option>
+                        <option value="ARROJADIZA">ARROJADIZA</option>
+                        <option value="ATINANTE">ATINANTE</option>
+                        <option value="BALANCEADA">BALANCEADA</option>
+                        <option value="BRILALNTE">BRILALNTE</option>
+                        <option value="CASTIGADORA">CASTIGADORA</option>
+                        <option value="COMPASIVA">COMPASIVA</option>
+                        <option value="CORROSIVA">CORROSIVA</option>
+                        <option value="DEFENSORA">DEFENSORA</option>
+                        <option value="DISTANTE">DISTANTE</option>
+                        <option value="ENCANTADA_MENOR">ENCANTADA_MENOR</option>
+                        <option value="FILOSA">FILOSA</option>
+                        <option value="PROTECTORA">PROTECTORA</option>
+                        <option value="RETORNANTE">RETORNANTE</option>
+                        <option value="VICTORIOSA">VICTORIOSA</option>
+                        <option value="DINAMO">DINAMO</option>
+                        <option value="ANARQUICA">ANARQUICA</option>
+                        <option value="ANULANTE">ANULANTE</option>
+                        <option value="AXIOMATICA">AXIOMATICA</option>
+                        <option value="CONTUNDENTE">CONTUNDENTE</option>
+                        <option value="ENCANTADA">ENCANTADA</option>
+                        <option value="LACERANTE">LACERANTE</option>
+                        <option value="PROFANA">PROFANA</option>
+                        <option value="SAGRADA">SAGRADA</option>
+                        <option value="VAMPIRICA">VAMPIRICA</option>
+                        <option value="RADIANTE">RADIANTE</option>
+                        <option value="DINAMO_OPTIMIZADO">DINAMO_OPTIMIZADO</option>
+                        <option value="ANIMADA">ANIMADA</option>
+                        <option value="ANULANTE_MAYOR">ANULANTE_MAYOR</option>
+                        <option value="BUSCADORA">BUSCADORA</option>
+                        <option value="ETEREA">ETEREA</option>
+                        <option value="ENCANTADA_MAYOR">ENCANTADA_MAYOR</option>
+                        <option value="INVISIBLE">INVISIBLE</option>
+                        <option value="INVOCABLE">INVOCABLE</option>
+                        <option value="VELOZ">VELOZ</option>
+                        <option value="RADIANTE_EXPLOSIVA">RADIANTE_EXPLOSIVA</option>
+                        <option value="EXORCISTA">EXORCISTA</option>
+                        <option value="INDESTRUCTIBLE">INDESTRUCTIBLE</option>
+                        <option value="EJECUTORA">EJECUTORA</option>
+                        <option value="SOLARIANA">SOLARIANA</option>
+                        <option value="NONE">NONE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dado">Dado</label>
+                    <select class="form-control" id="field_dado" name="dado" [(ngModel)]="arma.dado">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dadoOption.id === arma.dado?.id ? arma.dado : dadoOption" *ngFor="let dadoOption of dados; trackBy: trackDadoById">{{dadoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_crit">Crit</label>
+                    <select class="form-control" id="field_crit" name="crit" [(ngModel)]="arma.crit">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="aicOption.id === arma.crit?.id ? arma.crit : aicOption" *ngFor="let aicOption of crits; trackBy: trackAicById">{{aicOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_personaje">Personaje</label>
+                    <select class="form-control" id="field_personaje" name="personaje" [(ngModel)]="arma.personaje" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="personajeOption.id === arma.personaje?.id ? arma.personaje : personajeOption" *ngFor="let personajeOption of personajes; trackBy: trackPersonajeById">{{personajeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

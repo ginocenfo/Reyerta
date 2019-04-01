@@ -1,0 +1,135 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-armadura-heading">Create or edit a Armadura</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!armadura.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="armadura.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                        [(ngModel)]="armadura.type" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="armadura.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evasionBonus">Evasion Bonus</label>
+                    <input type="number" class="form-control" name="evasionBonus" id="field_evasionBonus"
+                        [(ngModel)]="armadura.evasionBonus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_maxDex">Max Dex</label>
+                    <input type="number" class="form-control" name="maxDex" id="field_maxDex"
+                        [(ngModel)]="armadura.maxDex" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_level">Level</label>
+                    <input type="number" class="form-control" name="level" id="field_level"
+                        [(ngModel)]="armadura.level" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_uc">Uc</label>
+                    <input type="number" class="form-control" name="uc" id="field_uc"
+                        [(ngModel)]="armadura.uc" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ppa">Ppa</label>
+                    <input type="number" class="form-control" name="ppa" id="field_ppa"
+                        [(ngModel)]="armadura.ppa" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_castFailChance">Cast Fail Chance</label>
+                    <input type="number" class="form-control" name="castFailChance" id="field_castFailChance"
+                        [(ngModel)]="armadura.castFailChance" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_price">Price</label>
+                    <input type="number" class="form-control" name="price" id="field_price"
+                        [(ngModel)]="armadura.price" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_incrustacionArmadura">Incrustacion Armadura</label>
+                    <select class="form-control" name="incrustacionArmadura" [(ngModel)]="armadura.incrustacionArmadura" id="field_incrustacionArmadura" >
+                        <option value="ACORAZADA_MENOR">ACORAZADA_MENOR</option>
+                        <option value="ATRAYENTE_MENOR">ATRAYENTE_MENOR</option>
+                        <option value="CURATIVA_BASICA">CURATIVA_BASICA</option>
+                        <option value="ESCAPISTA">ESCAPISTA</option>
+                        <option value="FLEXIBLE">FLEXIBLE</option>
+                        <option value="OPACA">OPACA</option>
+                        <option value="PROTECTORA">PROTECTORA</option>
+                        <option value="SILENCIOSA">SILENCIOSA</option>
+                        <option value="REFORZADA_MENOR">REFORZADA_MENOR</option>
+                        <option value="ACORAZADA">ACORAZADA</option>
+                        <option value="ANARQUICA">ANARQUICA</option>
+                        <option value="ATRAYENTE">ATRAYENTE</option>
+                        <option value="AXIOMATICA">AXIOMATICA</option>
+                        <option value="CAMBIANTE">CAMBIANTE</option>
+                        <option value="CURATIVA_CRITICA">CURATIVA_CRITICA</option>
+                        <option value="PROFANA">PROFANA</option>
+                        <option value="RESISTENTE_MENOR">RESISTENTE_MENOR</option>
+                        <option value="SAGRADA">SAGRADA</option>
+                        <option value="VALIENTE">VALIENTE</option>
+                        <option value="ACORAZADA_MAYOR">ACORAZADA_MAYOR</option>
+                        <option value="ATRAYENTE_MAYOR">ATRAYENTE_MAYOR</option>
+                        <option value="CURATIVA_SEVERA">CURATIVA_SEVERA</option>
+                        <option value="ETEREA">ETEREA</option>
+                        <option value="INDESTRUCTIBLE">INDESTRUCTIBLE</option>
+                        <option value="REFORZADA">REFORZADA</option>
+                        <option value="RESISTENTE">RESISTENTE</option>
+                        <option value="DESAFIANTE">DESAFIANTE</option>
+                        <option value="RESISTENTE_MAYOR">RESISTENTE_MAYOR</option>
+                        <option value="REFORZADA_MAYOR">REFORZADA_MAYOR</option>
+                        <option value="REDENTORA">REDENTORA</option>
+                        <option value="ACORAZADO_MENOR">ACORAZADO_MENOR</option>
+                        <option value="ALIENTODRAGON">ALIENTODRAGON</option>
+                        <option value="BATIENTE">BATIENTE</option>
+                        <option value="CAUSTICO_MENOR">CAUSTICO_MENOR</option>
+                        <option value="CECADOR">CECADOR</option>
+                        <option value="CONCUSION">CONCUSION</option>
+                        <option value="PROTECTOR">PROTECTOR</option>
+                        <option value="PUNZANTE">PUNZANTE</option>
+                        <option value="ACORAZADO">ACORAZADO</option>
+                        <option value="CAUSTICO">CAUSTICO</option>
+                        <option value="REFLEJANTE_MENOR">REFLEJANTE_MENOR</option>
+                        <option value="ACORAZADO_MAYOR">ACORAZADO_MAYOR</option>
+                        <option value="CAUTICO_MAYOR">CAUTICO_MAYOR</option>
+                        <option value="FLOTANTE">FLOTANTE</option>
+                        <option value="REFLEJANTE">REFLEJANTE</option>
+                        <option value="REFLEJANTE_MAYOR">REFLEJANTE_MAYOR</option>
+                        <option value="NONE">NONE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_damageByShield">Damage By Shield</label>
+                    <select class="form-control" id="field_damageByShield" name="damageByShield" [(ngModel)]="armadura.damageByShield">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dadoOption.id === armadura.damageByShield?.id ? armadura.damageByShield : dadoOption" *ngFor="let dadoOption of damagebyshields; trackBy: trackDadoById">{{dadoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_personaje">Personaje</label>
+                    <select class="form-control" id="field_personaje" name="personaje" [(ngModel)]="armadura.personaje" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="personajeOption.id === armadura.personaje?.id ? armadura.personaje : personajeOption" *ngFor="let personajeOption of personajes; trackBy: trackPersonajeById">{{personajeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

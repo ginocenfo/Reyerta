@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="personaje">
+            <h2><span>Personaje</span> {{personaje.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Owner Name</span></dt>
+                <dd>
+                    <span>{{personaje.ownerName}}</span>
+                </dd>
+                <dt><span>Character Name</span></dt>
+                <dd>
+                    <span>{{personaje.characterName}}</span>
+                </dd>
+                <dt><span>Alignment</span></dt>
+                <dd>
+                    <span>{{personaje.alignment}}</span>
+                </dd>
+                <dt><span>Religion</span></dt>
+                <dd>
+                    <span>{{personaje.religion}}</span>
+                </dd>
+                <dt><span>Gender</span></dt>
+                <dd>
+                    <span>{{personaje.gender}}</span>
+                </dd>
+                <dt><span>Real Age</span></dt>
+                <dd>
+                    <span>{{personaje.realAge}}</span>
+                </dd>
+                <dt><span>Apparent Age</span></dt>
+                <dd>
+                    <span>{{personaje.apparentAge}}</span>
+                </dd>
+                <dt><span>Dexterity</span></dt>
+                <dd>
+                    <span>{{personaje.dexterity}}</span>
+                </dd>
+                <dt><span>Origin Name</span></dt>
+                <dd>
+                    <span>{{personaje.originName}}</span>
+                </dd>
+                <dt><span>Size</span></dt>
+                <dd>
+                    <span>{{personaje.size}}</span>
+                </dd>
+                <dt><span>Height</span></dt>
+                <dd>
+                    <span>{{personaje.height}}</span>
+                </dd>
+                <dt><span>Weight</span></dt>
+                <dd>
+                    <span>{{personaje.weight}}</span>
+                </dd>
+                <dt><span>Eye Color</span></dt>
+                <dd>
+                    <span>{{personaje.eyeColor}}</span>
+                </dd>
+                <dt><span>Hair Color</span></dt>
+                <dd>
+                    <span>{{personaje.hairColor}}</span>
+                </dd>
+                <dt><span>Tez Color</span></dt>
+                <dd>
+                    <span>{{personaje.tezColor}}</span>
+                </dd>
+                <dt><span>Max Hit Points</span></dt>
+                <dd>
+                    <span>{{personaje.maxHitPoints}}</span>
+                </dd>
+                <dt><span>Current Hit Points</span></dt>
+                <dd>
+                    <span>{{personaje.currentHitPoints}}</span>
+                </dd>
+                <dt><span>Race</span></dt>
+                <dd>
+                    <span>{{personaje.race}}</span>
+                </dd>
+                <dt><span>Character Class</span></dt>
+                <dd>
+                    <span>{{personaje.characterClass}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/personaje', personaje.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

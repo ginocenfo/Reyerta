@@ -1,0 +1,166 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-personaje-heading">Create or edit a Personaje</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!personaje.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="personaje.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ownerName">Owner Name</label>
+                    <input type="text" class="form-control" name="ownerName" id="field_ownerName"
+                        [(ngModel)]="personaje.ownerName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_characterName">Character Name</label>
+                    <input type="text" class="form-control" name="characterName" id="field_characterName"
+                        [(ngModel)]="personaje.characterName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_alignment">Alignment</label>
+                    <select class="form-control" name="alignment" [(ngModel)]="personaje.alignment" id="field_alignment" >
+                        <option value="CAOTICO_BUENO">CAOTICO_BUENO</option>
+                        <option value="CAOTICO_NEUTRAL">CAOTICO_NEUTRAL</option>
+                        <option value="CAOTICO_MALO">CAOTICO_MALO</option>
+                        <option value="NEUTRAL_BUENO">NEUTRAL_BUENO</option>
+                        <option value="NEUTRAL_NEUTRAL">NEUTRAL_NEUTRAL</option>
+                        <option value="NEUTRAL_MALO">NEUTRAL_MALO</option>
+                        <option value="LEGAL_BUENO">LEGAL_BUENO</option>
+                        <option value="LEGAL_NEUTRAL">LEGAL_NEUTRAL</option>
+                        <option value="LEGAL_MALO">LEGAL_MALO</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_religion">Religion</label>
+                    <input type="text" class="form-control" name="religion" id="field_religion"
+                        [(ngModel)]="personaje.religion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gender">Gender</label>
+                    <input type="text" class="form-control" name="gender" id="field_gender"
+                        [(ngModel)]="personaje.gender" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_realAge">Real Age</label>
+                    <input type="number" class="form-control" name="realAge" id="field_realAge"
+                        [(ngModel)]="personaje.realAge" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_apparentAge">Apparent Age</label>
+                    <input type="number" class="form-control" name="apparentAge" id="field_apparentAge"
+                        [(ngModel)]="personaje.apparentAge" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dexterity">Dexterity</label>
+                    <select class="form-control" name="dexterity" [(ngModel)]="personaje.dexterity" id="field_dexterity" >
+                        <option value="DIESTRO">DIESTRO</option>
+                        <option value="ZURDO">ZURDO</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_originName">Origin Name</label>
+                    <input type="text" class="form-control" name="originName" id="field_originName"
+                        [(ngModel)]="personaje.originName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_size">Size</label>
+                    <select class="form-control" name="size" [(ngModel)]="personaje.size" id="field_size" >
+                        <option value="GIGANTIC">GIGANTIC</option>
+                        <option value="LARGE">LARGE</option>
+                        <option value="MEDIUM">MEDIUM</option>
+                        <option value="SMALL">SMALL</option>
+                        <option value="TINY">TINY</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_height">Height</label>
+                    <input type="number" class="form-control" name="height" id="field_height"
+                        [(ngModel)]="personaje.height" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_weight">Weight</label>
+                    <input type="number" class="form-control" name="weight" id="field_weight"
+                        [(ngModel)]="personaje.weight" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eyeColor">Eye Color</label>
+                    <input type="text" class="form-control" name="eyeColor" id="field_eyeColor"
+                        [(ngModel)]="personaje.eyeColor" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hairColor">Hair Color</label>
+                    <input type="text" class="form-control" name="hairColor" id="field_hairColor"
+                        [(ngModel)]="personaje.hairColor" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tezColor">Tez Color</label>
+                    <input type="text" class="form-control" name="tezColor" id="field_tezColor"
+                        [(ngModel)]="personaje.tezColor" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_maxHitPoints">Max Hit Points</label>
+                    <input type="number" class="form-control" name="maxHitPoints" id="field_maxHitPoints"
+                        [(ngModel)]="personaje.maxHitPoints" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_currentHitPoints">Current Hit Points</label>
+                    <input type="number" class="form-control" name="currentHitPoints" id="field_currentHitPoints"
+                        [(ngModel)]="personaje.currentHitPoints" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_race">Race</label>
+                    <select class="form-control" name="race" [(ngModel)]="personaje.race" id="field_race" >
+                        <option value="ALARDYS">ALARDYS</option>
+                        <option value="ALFIR_ELAK">ALFIR_ELAK</option>
+                        <option value="ALFIR_GYLENE">ALFIR_GYLENE</option>
+                        <option value="ALFIR_MUANEN">ALFIR_MUANEN</option>
+                        <option value="DHAMPIR">DHAMPIR</option>
+                        <option value="DOKKALFAR">DOKKALFAR</option>
+                        <option value="GNOMO">GNOMO</option>
+                        <option value="IYIWAK_ICHICK">IYIWAK_ICHICK</option>
+                        <option value="IYIWAK_NAMU">IYIWAK_NAMU</option>
+                        <option value="IYIWAK_URRI">IYIWAK_URRI</option>
+                        <option value="HUMANO">HUMANO</option>
+                        <option value="MITALFIR">MITALFIR</option>
+                        <option value="VARKOLAK">VARKOLAK</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_characterClass">Character Class</label>
+                    <select class="form-control" name="characterClass" [(ngModel)]="personaje.characterClass" id="field_characterClass" >
+                        <option value="ASESINO">ASESINO</option>
+                        <option value="BARBARO">BARBARO</option>
+                        <option value="BARDO">BARDO</option>
+                        <option value="CABALLERO_OSCURO">CABALLERO_OSCURO</option>
+                        <option value="CAZADOR">CAZADOR</option>
+                        <option value="CLERIGO">CLERIGO</option>
+                        <option value="ESPADACHIN">ESPADACHIN</option>
+                        <option value="LADRON">LADRON</option>
+                        <option value="MAGO">MAGO</option>
+                        <option value="MONJE">MONJE</option>
+                        <option value="NINJA">NINJA</option>
+                        <option value="PALADIN">PALADIN</option>
+                        <option value="PELEADOR">PELEADOR</option>
+                        <option value="PISTOLERO">PISTOLERO</option>
+                        <option value="SAMURAI">SAMURAI</option>
+                        <option value="LANCERO">LANCERO</option>
+                        <option value="TECNOLOGO">TECNOLOGO</option>
+                        <option value="ALQUIMISTA">ALQUIMISTA</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

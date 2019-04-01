@@ -1,0 +1,23 @@
+{
+    "name": "Aic",
+    "fields": [
+        {
+            "fieldName": "prob",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mult",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190224220802",
+    "entityTableName": "aic",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

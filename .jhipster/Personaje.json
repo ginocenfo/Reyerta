@@ -1,0 +1,109 @@
+{
+    "name": "Personaje",
+    "fields": [
+        {
+            "fieldName": "ownerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "characterName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "alignment",
+            "fieldType": "Alignment",
+            "fieldValues": "CAOTICO_BUENO,CAOTICO_NEUTRAL,CAOTICO_MALO,NEUTRAL_BUENO,NEUTRAL_NEUTRAL,NEUTRAL_MALO,LEGAL_BUENO,LEGAL_NEUTRAL,LEGAL_MALO"
+        },
+        {
+            "fieldName": "religion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "realAge",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "apparentAge",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dexterity",
+            "fieldType": "Dexterity",
+            "fieldValues": "DIESTRO,ZURDO"
+        },
+        {
+            "fieldName": "originName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Sizes",
+            "fieldValues": "GIGANTIC,LARGE,MEDIUM,SMALL,TINY"
+        },
+        {
+            "fieldName": "height",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "eyeColor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hairColor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tezColor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "maxHitPoints",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "currentHitPoints",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "race",
+            "fieldType": "Races",
+            "fieldValues": "ALARDYS,ALFIR_ELAK,ALFIR_GYLENE,ALFIR_MUANEN,DHAMPIR,DOKKALFAR,GNOMO,IYIWAK_ICHICK,IYIWAK_NAMU,IYIWAK_URRI,HUMANO,MITALFIR,VARKOLAK"
+        },
+        {
+            "fieldName": "characterClass",
+            "fieldType": "CharacterClase",
+            "fieldValues": "ASESINO,BARBARO,BARDO,CABALLERO_OSCURO,CAZADOR,CLERIGO,ESPADACHIN,LADRON,MAGO,MONJE,NINJA,PALADIN,PELEADOR,PISTOLERO,SAMURAI,LANCERO,TECNOLOGO,ALQUIMISTA"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "armas",
+            "otherEntityName": "arma",
+            "otherEntityRelationshipName": "personaje"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "armadura",
+            "otherEntityName": "armadura",
+            "otherEntityRelationshipName": "personaje"
+        }
+    ],
+    "changelogDate": "20190224220805",
+    "entityTableName": "personaje",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

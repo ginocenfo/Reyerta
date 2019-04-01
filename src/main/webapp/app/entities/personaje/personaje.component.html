@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span>Personajes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-personaje" [routerLink]="['/personaje/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Personaje
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="personajes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Owner Name</span></th>
+            <th><span>Character Name</span></th>
+            <th><span>Alignment</span></th>
+            <th><span>Religion</span></th>
+            <th><span>Gender</span></th>
+            <th><span>Real Age</span></th>
+            <th><span>Apparent Age</span></th>
+            <th><span>Dexterity</span></th>
+            <th><span>Origin Name</span></th>
+            <th><span>Size</span></th>
+            <th><span>Height</span></th>
+            <th><span>Weight</span></th>
+            <th><span>Eye Color</span></th>
+            <th><span>Hair Color</span></th>
+            <th><span>Tez Color</span></th>
+            <th><span>Max Hit Points</span></th>
+            <th><span>Current Hit Points</span></th>
+            <th><span>Race</span></th>
+            <th><span>Character Class</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let personaje of personajes ;trackBy: trackId">
+                <td><a [routerLink]="['/personaje', personaje.id, 'view' ]">{{personaje.id}}</a></td>
+                <td>{{personaje.ownerName}}</td>
+                <td>{{personaje.characterName}}</td>
+                <td>{{personaje.alignment}}</td>
+                <td>{{personaje.religion}}</td>
+                <td>{{personaje.gender}}</td>
+                <td>{{personaje.realAge}}</td>
+                <td>{{personaje.apparentAge}}</td>
+                <td>{{personaje.dexterity}}</td>
+                <td>{{personaje.originName}}</td>
+                <td>{{personaje.size}}</td>
+                <td>{{personaje.height}}</td>
+                <td>{{personaje.weight}}</td>
+                <td>{{personaje.eyeColor}}</td>
+                <td>{{personaje.hairColor}}</td>
+                <td>{{personaje.tezColor}}</td>
+                <td>{{personaje.maxHitPoints}}</td>
+                <td>{{personaje.currentHitPoints}}</td>
+                <td>{{personaje.race}}</td>
+                <td>{{personaje.characterClass}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/personaje', personaje.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/personaje', personaje.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'personaje', { outlets: { popup: personaje.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

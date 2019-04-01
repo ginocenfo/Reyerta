@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span>Armas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-arma" [routerLink]="['/arma/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Arma
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="armas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Type</span></th>
+            <th><span>Name</span></th>
+            <th><span>Prize</span></th>
+            <th><span>Level</span></th>
+            <th><span>Is Masterpiece</span></th>
+            <th><span>Elite Level</span></th>
+            <th><span>Damage Type</span></th>
+            <th><span>Special</span></th>
+            <th><span>Incrustacion</span></th>
+            <th><span>Dado</span></th>
+            <th><span>Crit</span></th>
+            <th><span>Personaje</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let arma of armas ;trackBy: trackId">
+                <td><a [routerLink]="['/arma', arma.id, 'view' ]">{{arma.id}}</a></td>
+                <td>{{arma.type}}</td>
+                <td>{{arma.name}}</td>
+                <td>{{arma.prize}}</td>
+                <td>{{arma.level}}</td>
+                <td>{{arma.isMasterpiece}}</td>
+                <td>{{arma.eliteLevel}}</td>
+                <td>{{arma.damageType}}</td>
+                <td>{{arma.special}}</td>
+                <td>{{arma.incrustacion}}</td>
+                <td>
+                    <div *ngIf="arma.dado">
+                        <a [routerLink]="['../dado', arma.dado?.id, 'view' ]" >{{arma.dado?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="arma.crit">
+                        <a [routerLink]="['../aic', arma.crit?.id, 'view' ]" >{{arma.crit?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="arma.personaje">
+                        <a [routerLink]="['../personaje', arma.personaje?.id, 'view' ]" >{{arma.personaje?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/arma', arma.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/arma', arma.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'arma', { outlets: { popup: arma.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

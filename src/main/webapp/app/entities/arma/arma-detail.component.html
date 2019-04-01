@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="arma">
+            <h2><span>Arma</span> {{arma.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Type</span></dt>
+                <dd>
+                    <span>{{arma.type}}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{arma.name}}</span>
+                </dd>
+                <dt><span>Prize</span></dt>
+                <dd>
+                    <span>{{arma.prize}}</span>
+                </dd>
+                <dt><span>Level</span></dt>
+                <dd>
+                    <span>{{arma.level}}</span>
+                </dd>
+                <dt><span>Is Masterpiece</span></dt>
+                <dd>
+                    <span>{{arma.isMasterpiece}}</span>
+                </dd>
+                <dt><span>Elite Level</span></dt>
+                <dd>
+                    <span>{{arma.eliteLevel}}</span>
+                </dd>
+                <dt><span>Damage Type</span></dt>
+                <dd>
+                    <span>{{arma.damageType}}</span>
+                </dd>
+                <dt><span>Special</span></dt>
+                <dd>
+                    <span>{{arma.special}}</span>
+                </dd>
+                <dt><span>Incrustacion</span></dt>
+                <dd>
+                    <span>{{arma.incrustacion}}</span>
+                </dd>
+                <dt><span>Dado</span></dt>
+                <dd>
+                    <div *ngIf="arma.dado">
+                        <a [routerLink]="['/dado', arma.dado?.id, 'view']">{{arma.dado?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Crit</span></dt>
+                <dd>
+                    <div *ngIf="arma.crit">
+                        <a [routerLink]="['/aic', arma.crit?.id, 'view']">{{arma.crit?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Personaje</span></dt>
+                <dd>
+                    <div *ngIf="arma.personaje">
+                        <a [routerLink]="['/personaje', arma.personaje?.id, 'view']">{{arma.personaje?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/arma', arma.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

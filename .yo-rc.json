@@ -1,0 +1,35 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.charactergenerator.reyerta"
+    },
+    "jhipsterVersion": "5.8.1",
+    "applicationType": "monolith",
+    "baseName": "Reyerta",
+    "packageName": "com.charactergenerator.reyerta",
+    "packageFolder": "com/charactergenerator/reyerta",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ODI0YTA4MWEwMDYwMmUzNmY3NDI2OTQ4MjczZjUxYjY4OTY5ZDY2YjA1YjBiNzk4OWMzZjdlNjQ1OWQzNGE3ZGM1MTUzNjFhZjZhMjAxOGMyODA1ZDA4Mzc5OTYyZjYzNTgwZjAzZjAxZTM5NWM1NTBlNDMzZTU4OGJjN2NiNWU=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}
