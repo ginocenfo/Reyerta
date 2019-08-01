@@ -32,13 +32,7 @@ public class ArmaResource {
         this.armaService = armaService;
     }
 
-    /**
-     * POST  /armas : Create a new arma.
-     *
-     * @param arma the arma to create
-     * @return the ResponseEntity with status 201 (Created) and with body the new arma, or with status 400 (Bad Request) if the arma has already an ID
-     * @throws URISyntaxException if the Location URI syntax is incorrect
-     */
+
     @PostMapping("/armas")
     public ResponseEntity<Arma> createArma(@RequestBody Arma arma) throws URISyntaxException {
         log.debug("REST request to save Arma : {}", arma);
@@ -51,15 +45,7 @@ public class ArmaResource {
             .body(result);
     }
 
-    /**
-     * PUT  /armas : Updates an existing arma.
-     *
-     * @param arma the arma to update
-     * @return the ResponseEntity with status 200 (OK) and with body the updated arma,
-     * or with status 400 (Bad Request) if the arma is not valid,
-     * or with status 500 (Internal Server Error) if the arma couldn't be updated
-     * @throws URISyntaxException if the Location URI syntax is incorrect
-     */
+
     @PutMapping("/armas")
     public ResponseEntity<Arma> updateArma(@RequestBody Arma arma) throws URISyntaxException {
         log.debug("REST request to update Arma : {}", arma);
@@ -72,23 +58,14 @@ public class ArmaResource {
             .body(result);
     }
 
-    /**
-     * GET  /armas : get all the armas.
-     *
-     * @return the ResponseEntity with status 200 (OK) and the list of armas in body
-     */
+
     @GetMapping("/armas")
     public List<Arma> getAllArmas() {
         log.debug("REST request to get all Armas");
         return armaService.findAll();
     }
 
-    /**
-     * GET  /armas/:id : get the "id" arma.
-     *
-     * @param id the id of the arma to retrieve
-     * @return the ResponseEntity with status 200 (OK) and with body the arma, or with status 404 (Not Found)
-     */
+
     @GetMapping("/armas/{id}")
     public ResponseEntity<Arma> getArma(@PathVariable Long id) {
         log.debug("REST request to get Arma : {}", id);
@@ -96,12 +73,7 @@ public class ArmaResource {
         return ResponseUtil.wrapOrNotFound(arma);
     }
 
-    /**
-     * DELETE  /armas/:id : delete the "id" arma.
-     *
-     * @param id the id of the arma to delete
-     * @return the ResponseEntity with status 200 (OK)
-     */
+
     @DeleteMapping("/armas/{id}")
     public ResponseEntity<Void> deleteArma(@PathVariable Long id) {
         log.debug("REST request to delete Arma : {}", id);
